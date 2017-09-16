@@ -4,14 +4,8 @@
 
 .App-logo {
   height: 50px;
-  animation: App-logo-spin infinite 20s linear;
   float: left;
-  margin-right: 5px;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  margin-top: 7px;
 }
 
 .footer {
@@ -24,4 +18,6 @@
 
 .footer p {
   color: #828282;
+  margin-left: 3rem;
+  margin-top: 4rem;
 }
