@@ -1,3 +1,7 @@
+.header {
+  border-radius: 0 !important;
+}
+
 .g {
   color: orange;
 }
@@ -13,7 +17,7 @@
   bottom: 0;
   height: 100px;
   width: 100%;
-  background-color: rgb(47,48,44);
+  background-color: rgb(62,63,57);
 }
 
 .footer p {
