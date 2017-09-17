@@ -7,7 +7,7 @@ const ListOfStudents = ({ students, toggleModal }) => {
     let checkedIn = student.checkedIn ? 'success' : 'danger'
     return (
       <Col sm={6} md={4} key={ student.name } >
-        <ListGroupItem bsStyle={ checkedIn } onClick={toggleModal} className="StudentList-item">{ student.name }</ListGroupItem>
+        <ListGroupItem bsStyle={ checkedIn } onClick={toggleModal.bind(null, student)} className="StudentList-item">{ student.name }</ListGroupItem>
       </Col>
     )
   })

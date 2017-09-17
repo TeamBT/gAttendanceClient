@@ -45,20 +45,32 @@ class App extends Component {
 
     this.state = {
       students: [],
+      selectedStudent: null,
       showModal: false
     }
 
     this.toggleModal = this.toggleModal.bind(this)
+    this.loadStudents = this.loadStudents.bind(this)
   }
-  toggleModal() {
-    this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true})
+  loadStudents(attendance) {
+    this.setState({
+      students: attendance
+    })
+  }
+  toggleModal(student) {
+    console.log(student);
+    this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true, selectedStudent: student})
+  }
+  componentWillMount() {
+    this.loadStudents(attendance)
   }
   render() {
     return (
       <div>
         <Header logo={ logo } instructor="Roberto Ortega"/>
-        <ListOfStudents students={ attendance } toggleModal={this.toggleModal}/>
-        <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />
+        <ListOfStudents students={ this.state.students } toggleModal={this.toggleModal}/>
+        <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal}
+          student={this.state.selectedStudent}/>
         <Footer />
       </div>
     );
