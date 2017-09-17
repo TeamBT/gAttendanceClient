@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ListOfStudents from './components/ListOfStudents'
+import StudentModal from './components/StudentModal'
 
 const attendance = [
   {
@@ -39,11 +40,25 @@ const attendance = [
 ]
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      students: [],
+      showModal: false
+    }
+
+    this.toggleModal = this.toggleModal.bind(this)
+  }
+  toggleModal() {
+    this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true})
+  }
   render() {
     return (
       <div>
         <Header logo={ logo } instructor="Roberto Ortega"/>
-        <ListOfStudents students={ attendance }/>
+        <ListOfStudents students={ attendance } toggleModal={this.toggleModal}/>
+        <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal} />
         <Footer />
       </div>
     );

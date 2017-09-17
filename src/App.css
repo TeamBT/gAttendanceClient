@@ -14,7 +14,7 @@
 
 .StudentList-item {
   text-transform: capitalize;
-  text-align: center;
+  text-align: center !important;
   color: #828282 !important;
 }
 
