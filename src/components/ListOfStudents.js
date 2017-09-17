@@ -8,10 +8,11 @@ const ListOfStudents = ({ students }) => {
     let checkedIn = student.checkedIn ? 'success' : 'danger'
     return (
       <Col sm={6} md={4} key={ student.name } >
-        <ListGroupItem bsStyle={ checkedIn } className="PokeList-item">{ student.name }</ListGroupItem>
+        <ListGroupItem bsStyle={ checkedIn } className="StudentList-item">{ student.name }</ListGroupItem>
       </Col>
     )
   })
+  
   return (
     <Col sm={8} md={10} smOffset={2} mdOffset={1}>
       <ListGroup>

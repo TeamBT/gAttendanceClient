@@ -12,6 +12,12 @@
   margin-top: 7px;
 }
 
+.StudentList-item {
+  text-transform: capitalize;
+  text-align: center;
+  color: #828282 !important;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -22,6 +28,6 @@
 
 .footer p {
   color: #828282;
-  margin-left: 3rem;
+  margin-left: 12rem;
   margin-top: 4rem;
 }

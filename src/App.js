@@ -8,31 +8,31 @@ import ListOfStudents from './components/ListOfStudents'
 const attendance = [
   {
     id: 1,
-    name: 'Nick',
+    name: 'Nick Nasky',
     checkedIn: true,
     Excused: false
   },
   {
     id: 2,
-    name: 'Tyler',
+    name: 'Tyler Keesling',
     checkedIn: true,
     Excused: false
   },
   {
     id: 3,
-    name: 'Jae',
+    name: 'Jae Holderby',
     checkedIn: true,
     Excused: false
   },
   {
     id: 4,
-    name: 'Cody',
+    name: 'Cody Duskin',
     checkedIn: true,
     Excused: false
   },
   {
     id: 5,
-    name: 'Trenton',
+    name: 'Trenton Wuerker',
     checkedIn: false,
     Excused: false
   }
