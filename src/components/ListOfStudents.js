@@ -7,7 +7,7 @@ const ListOfStudents = ({ students, toggleModal }) => {
     <Col sm={8} md={10} smOffset={2} mdOffset={1}>
       <ListGroup>
         {students.map(student => {
-          return <Student key={student.id} student={student} toggleModal={toggleModal}/>
+          return <Student key={student.id} student={student} toggleModal={toggleModal} />
           }
         )}
       </ListGroup>
