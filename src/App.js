@@ -64,7 +64,6 @@ class App extends Component {
     }
 
     this.setState(prevState => {
-      // prevState.students[studentId-1].checkedIn = selectedOption
       prevState.students.find(findId).checkedIn = selectedOption
       prevState.showModal = false
     })
