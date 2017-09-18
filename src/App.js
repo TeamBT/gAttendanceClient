@@ -50,10 +50,9 @@ class App extends Component {
     }
 
     this.toggleModal = this.toggleModal.bind(this)
-    this.loadStudents = this.loadStudents.bind(this)
     this.attendanceSubmission = this.attendanceSubmission.bind(this)
   }
-  loadStudents(attendance) {
+  componentWillMount() {
     this.setState({
       students: attendance
     })
@@ -70,9 +69,6 @@ class App extends Component {
   }
   toggleModal(student) {
     this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true, selectedStudent: student})
-  }
-  componentWillMount() {
-    this.loadStudents(attendance)
   }
   render() {
     return (
