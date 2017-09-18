@@ -1,21 +1,15 @@
 import React from 'react'
-import { ListGroup, ListGroupItem, Col } from 'react-bootstrap/lib/'
+import Student from './Student'
+import { ListGroup, Col } from 'react-bootstrap/lib/'
 
 const ListOfStudents = ({ students, toggleModal }) => {
-
-  let student = students.map(student => {
-    let checkedIn = student.checkedIn ? 'success' : 'danger'
-    return (
-      <Col sm={5} md={4} key={student.id} >
-        <ListGroupItem bsStyle={checkedIn} onClick={toggleModal.bind(null, student)} className="StudentList-item">{ student.name }</ListGroupItem>
-      </Col>
-    )
-  })
-
   return (
     <Col sm={8} md={10} smOffset={2} mdOffset={1}>
       <ListGroup>
-        {student}
+        {students.map(student => {
+          return <Student key={student.id} student={student} toggleModal={toggleModal}/>
+          }
+        )}
       </ListGroup>
     </Col>
   )
