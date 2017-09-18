@@ -10,7 +10,7 @@ const attendance = [
   {
     id: 1,
     name: 'Nick Nasky',
-    checkedIn: true,
+    checkedIn: false,
     Excused: false
   },
   {
@@ -51,14 +51,25 @@ class App extends Component {
 
     this.toggleModal = this.toggleModal.bind(this)
     this.loadStudents = this.loadStudents.bind(this)
+    this.attendanceSubmission = this.attendanceSubmission.bind(this)
   }
   loadStudents(attendance) {
     this.setState({
       students: attendance
     })
   }
+  attendanceSubmission(selectedOption, studentId) {
+    function findId(cohort) {
+      return cohort.id === studentId
+    }
+
+    this.setState(prevState => {
+      // prevState.students[studentId-1].checkedIn = selectedOption
+      prevState.students.find(findId).checkedIn = selectedOption
+      prevState.showModal = false
+    })
+  }
   toggleModal(student) {
-    console.log(student);
     this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true, selectedStudent: student})
   }
   componentWillMount() {
@@ -70,7 +81,7 @@ class App extends Component {
         <Header logo={ logo } instructor="Roberto Ortega"/>
         <ListOfStudents students={ this.state.students } toggleModal={this.toggleModal}/>
         <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal}
-          student={this.state.selectedStudent}/>
+          student={this.state.selectedStudent} attendanceSubmission={this.attendanceSubmission}/>
         <Footer />
       </div>
     );

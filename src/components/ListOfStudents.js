@@ -6,8 +6,8 @@ const ListOfStudents = ({ students, toggleModal }) => {
   let student = students.map(student => {
     let checkedIn = student.checkedIn ? 'success' : 'danger'
     return (
-      <Col sm={6} md={4} key={ student.name } >
-        <ListGroupItem bsStyle={ checkedIn } onClick={toggleModal.bind(null, student)} className="StudentList-item">{ student.name }</ListGroupItem>
+      <Col sm={5} md={4} key={student.id} >
+        <ListGroupItem bsStyle={checkedIn} onClick={toggleModal.bind(null, student)} className="StudentList-item">{ student.name }</ListGroupItem>
       </Col>
     )
   })
@@ -15,7 +15,7 @@ const ListOfStudents = ({ students, toggleModal }) => {
   return (
     <Col sm={8} md={10} smOffset={2} mdOffset={1}>
       <ListGroup>
-        { student }
+        {student}
       </ListGroup>
     </Col>
   )

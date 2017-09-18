@@ -1,8 +1,9 @@
 import React from 'react'
+import AttendanceOptions from './AttendanceOptions'
 import { Modal, Button } from 'react-bootstrap/lib/'
 // import StudentInfo from './StudentInfo'
 
-const StudentModal = ({ toggleModal, showModal, student }) => {
+const StudentModal = ({ toggleModal, showModal, student, attendanceSubmission }) => {
   return (
     <div>
       <Modal
@@ -13,7 +14,7 @@ const StudentModal = ({ toggleModal, showModal, student }) => {
           <Modal.Title id="contained-modal-title">{student !== null ? student.name : 'Loading...'}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          test
+          <AttendanceOptions student={student} attendanceSubmission={attendanceSubmission} />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={toggleModal}>Close</Button>
