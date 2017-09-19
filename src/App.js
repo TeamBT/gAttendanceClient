@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import ListOfStudents from './components/ListOfStudents'
 import StudentModal from './components/StudentModal'
+import FilterBar from './components/FilterBar'
 
 const attendance = [
   {
@@ -45,16 +46,24 @@ class App extends Component {
 
     this.state = {
       students: [],
+      filterStudents: [],
       selectedStudent: null,
       showModal: false
     }
 
     this.toggleModal = this.toggleModal.bind(this)
     this.attendanceSubmission = this.attendanceSubmission.bind(this)
+    this.filteredStudents = this.filteredStudents.bind(this)
   }
   componentWillMount() {
     this.setState({
-      students: attendance
+      students: attendance,
+      filterStudents: attendance
+    })
+  }
+  filteredStudents(filteredList) {
+    this.setState({
+      filterStudents: filteredList
     })
   }
   attendanceSubmission(selectedOption, selectedExcused, studentId) {
@@ -64,10 +73,10 @@ class App extends Component {
 
     let isExcused
     selectedOption ? isExcused = null : isExcused = selectedExcused
-    
+
     this.setState(prevState => {
-      prevState.students.find(findId).checkedIn = selectedOption
-      prevState.students.find(findId).excused = isExcused
+      prevState.filterStudents.find(findId).checkedIn = selectedOption
+      prevState.filterStudents.find(findId).excused = isExcused
       prevState.showModal = false
     })
   }
@@ -78,7 +87,8 @@ class App extends Component {
     return (
       <div>
         <Header logo={ logo } instructor="Roberto Ortega"/>
-        <ListOfStudents students={ this.state.students } toggleModal={this.toggleModal}/>
+        <FilterBar students={this.state.students} filteredStudents={this.filteredStudents} />
+        <ListOfStudents students={ this.state.filterStudents } toggleModal={this.toggleModal}/>
         <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal}
           student={this.state.selectedStudent} attendanceSubmission={this.attendanceSubmission}/>
         <Footer />

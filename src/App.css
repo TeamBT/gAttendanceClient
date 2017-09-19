@@ -1,5 +1,7 @@
 .header {
   border-radius: 0 !important;
+  margin-bottom: 0.5rem !important;
+  /*padding-bottom: 0 !important;*/
 }
 
 .g {
@@ -10,6 +12,10 @@
   height: 50px;
   float: left;
   margin-top: 7px;
+}
+
+.buttonGroup {
+  margin-bottom: 0.5rem !important;
 }
 
 .StudentList-item {
