@@ -11,31 +11,31 @@ const attendance = [
     id: 1,
     name: 'Nick Nasky',
     checkedIn: false,
-    Excused: false
+    excused: false
   },
   {
     id: 2,
     name: 'Tyler Keesling',
-    checkedIn: true,
-    Excused: false
+    checkedIn: false,
+    excused: false
   },
   {
     id: 3,
     name: 'Jae Holderby',
-    checkedIn: true,
-    Excused: false
+    checkedIn: false,
+    excused: false
   },
   {
     id: 4,
     name: 'Cody Duskin',
-    checkedIn: true,
-    Excused: false
+    checkedIn: false,
+    excused: false
   },
   {
     id: 5,
     name: 'Trenton Wuerker',
     checkedIn: false,
-    Excused: false
+    excused: false
   }
 ]
 
@@ -57,13 +57,17 @@ class App extends Component {
       students: attendance
     })
   }
-  attendanceSubmission(selectedOption, studentId) {
+  attendanceSubmission(selectedOption, selectedExcused, studentId) {
     function findId(cohort) {
       return cohort.id === studentId
     }
 
+    let isExcused
+    selectedOption ? isExcused = null : isExcused = selectedExcused
+    
     this.setState(prevState => {
       prevState.students.find(findId).checkedIn = selectedOption
+      prevState.students.find(findId).excused = isExcused
       prevState.showModal = false
     })
   }

@@ -1,10 +1,10 @@
 import React from 'react'
 import Student from './Student'
-import { ListGroup, Col } from 'react-bootstrap/lib/'
+import {ListGroup, Col} from 'react-bootstrap/lib/'
 
-const ListOfStudents = ({ students, toggleModal }) => {
+const ListOfStudents = ({students, toggleModal}) => {
   return (
-    <Col sm={8} md={10} smOffset={2} mdOffset={1}>
+    <Col sm={12} md={10} smOffset={1} mdOffset={1}>
       <ListGroup>
         {students.map(student => {
           return <Student key={student.id} student={student} toggleModal={toggleModal} />
