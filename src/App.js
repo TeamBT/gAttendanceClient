@@ -75,8 +75,8 @@ class App extends Component {
     selectedOption ? isExcused = null : isExcused = selectedExcused
 
     this.setState(prevState => {
-      prevState.filterStudents.find(findId).checkedIn = selectedOption
-      prevState.filterStudents.find(findId).excused = isExcused
+      prevState.students.find(findId).checkedIn = selectedOption
+      prevState.students.find(findId).excused = isExcused
       prevState.showModal = false
     })
   }
@@ -86,11 +86,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header logo={ logo } instructor="Roberto Ortega"/>
+        <Header logo={logo} instructor="Roberto Ortega"/>
         <FilterBar students={this.state.students} filteredStudents={this.filteredStudents} />
-        <ListOfStudents students={ this.state.filterStudents } toggleModal={this.toggleModal}/>
+        <ListOfStudents students={this.state.filterStudents} toggleModal={this.toggleModal} />
         <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal}
-          student={this.state.selectedStudent} attendanceSubmission={this.attendanceSubmission}/>
+          student={this.state.selectedStudent} attendanceSubmission={this.attendanceSubmission} />
         <Footer />
       </div>
     );
