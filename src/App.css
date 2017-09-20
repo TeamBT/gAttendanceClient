@@ -18,15 +18,22 @@
   margin-bottom: 0.5rem !important;
 }
 
+.listGroup {
+  padding-bottom: 10rem;
+}
+
 .StudentList-item {
   text-transform: capitalize;
   text-align: center !important;
   color: #828282 !important;
   margin-bottom: 0.5rem !important;
 }
+#root > div > div.col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-1 {
+  margin-bottom: 100px;
+}
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 100px;
   width: 100%;

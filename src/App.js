@@ -7,38 +7,7 @@ import ListOfStudents from './components/ListOfStudents'
 import StudentModal from './components/StudentModal'
 import FilterBar from './components/FilterBar'
 
-const attendance = [
-  {
-    id: 1,
-    name: 'Nick Nasky',
-    checkedIn: false,
-    excused: false
-  },
-  {
-    id: 2,
-    name: 'Tyler Keesling',
-    checkedIn: false,
-    excused: false
-  },
-  {
-    id: 3,
-    name: 'Jae Holderby',
-    checkedIn: false,
-    excused: false
-  },
-  {
-    id: 4,
-    name: 'Cody Duskin',
-    checkedIn: false,
-    excused: false
-  },
-  {
-    id: 5,
-    name: 'Trenton Wuerker',
-    checkedIn: false,
-    excused: false
-  }
-]
+const baseURL = 'https://cors-anywhere.herokuapp.com/https://arcane-spire-19269.herokuapp.com'
 
 class App extends Component {
 
@@ -52,8 +21,9 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
-    //api connect
+  async componentWillMount() {
+    const response = await fetch(`${baseURL}/student`)
+    const attendance = await response.json()
 
     this.setState({
       students: attendance,

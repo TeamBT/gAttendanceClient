@@ -5,7 +5,7 @@ import {ListGroup, Col} from 'react-bootstrap/lib/'
 const ListOfStudents = ({students, toggleModal}) => {
   return (
     <Col sm={12} md={10} smOffset={1} mdOffset={1}>
-      <ListGroup>
+      <ListGroup className="listGroup">
         {students.map(student => {
           return <Student key={student.id}
                     student={student}
