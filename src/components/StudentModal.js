@@ -5,10 +5,11 @@ import { Modal, Button } from 'react-bootstrap/lib/'
 
 const StudentModal = ({ toggleModal, showModal, student, attendanceSubmission }) => {
   return (
-    <div>
+    <div className="modal">
       <Modal
         show={showModal}
         onHide={toggleModal}
+        bsSize='sm'
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title">{student !== null ? student.name : 'Loading...'}</Modal.Title>

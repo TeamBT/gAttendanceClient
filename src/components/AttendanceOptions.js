@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, FormGroup, ControlLabel, Radio } from 'react-bootstrap/lib/'
+import { Button, FormGroup, ControlLabel, Radio, Col } from 'react-bootstrap/lib/'
 
 class AttendanceOptions extends React.Component {
   constructor(props) {
@@ -29,7 +29,6 @@ class AttendanceOptions extends React.Component {
   render() {
     return(
     <form onSubmit={this.handleSubmit}>
-
       <FormGroup controlId="hereNotHere">
           <ControlLabel htmlFor="hereNotHere" >Attendance</ControlLabel>
           <Radio name="selectedOption" value='true' checked={this.state.selectedOption === true}
@@ -43,7 +42,6 @@ class AttendanceOptions extends React.Component {
           </Radio>
           {' '}
       </FormGroup>
-
       <FormGroup hidden={this.state.selectedOption} controlId="excused">
           <ControlLabel htmlFor="excused" >Excused/Unexcused</ControlLabel>
           <Radio name="selectedExcused" value='true' checked={this.state.selectedExcused === true}
