@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, FormGroup, ControlLabel, Radio, Col } from 'react-bootstrap/lib/'
+import { Button, FormGroup, ControlLabel, Radio, } from 'react-bootstrap/lib/'
 
 class AttendanceOptions extends React.Component {
   constructor(props) {

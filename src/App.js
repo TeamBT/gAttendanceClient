@@ -41,31 +41,30 @@ const attendance = [
 ]
 
 class App extends Component {
+
   constructor(props) {
     super(props)
-
     this.state = {
       students: [],
-      filterStudents: [],
       selectedStudent: null,
-      showModal: false
+      showModal: false,
+      currentFilter: ''
     }
-
-    this.toggleModal = this.toggleModal.bind(this)
-    this.attendanceSubmission = this.attendanceSubmission.bind(this)
-    this.filteredStudents = this.filteredStudents.bind(this)
   }
+
   componentWillMount() {
+    //api connect
+
     this.setState({
       students: attendance,
-      filterStudents: attendance
+      currentFilter: 'all'
     })
   }
-  filteredStudents(filteredList) {
-    this.setState({
-      filterStudents: filteredList
-    })
+
+  toggleFilter(newFilter) {
+    this.setState({ currentFilter: newFilter })
   }
+
   attendanceSubmission(selectedOption, selectedExcused, studentId) {
     function findId(cohort) {
       return cohort.id === studentId
@@ -80,17 +79,38 @@ class App extends Component {
       prevState.showModal = false
     })
   }
+
   toggleModal(student) {
-    this.state.showModal ? this.setState({showModal: false}) : this.setState({showModal: true, selectedStudent: student})
+    this.state.showModal ?
+      this.setState({ showModal: false }) :
+      this.setState({ showModal: true,
+                      selectedStudent: student
+                    })
   }
+
   render() {
+    let students = []
+    if (this.state.currentFilter === 'all') {
+      students = this.state.students
+    } else if (this.state.currentFilter === 'absent') {
+      students = this.state.students.filter(student => { return student.checkedIn === false })
+    } else if (this.state.currentFilter === 'present') {
+      students = this.state.students.filter(student => { return student.checkedIn === true })
+    }
     return (
       <div>
-        <Header logo={logo} instructor="Roberto Ortega"/>
-        <FilterBar students={this.state.students} filteredStudents={this.filteredStudents} />
-        <ListOfStudents students={this.state.filterStudents} toggleModal={this.toggleModal} />
-        <StudentModal toggleModal={this.toggleModal} showModal={this.state.showModal}
-          student={this.state.selectedStudent} attendanceSubmission={this.attendanceSubmission} />
+        <Header logo={logo}
+                instructor="Roberto Ortega"/>
+
+        <FilterBar toggleFilter={ this.toggleFilter.bind(this) }/>
+
+        <ListOfStudents students={ students }
+                        toggleModal={ this.toggleModal.bind(this) } />
+
+        <StudentModal toggleModal={ this.toggleModal.bind(this) }
+                      showModal={ this.state.showModal }
+                      student={ this.state.selectedStudent }
+                      attendanceSubmission={ this.attendanceSubmission.bind(this) } />
         <Footer />
       </div>
     );
