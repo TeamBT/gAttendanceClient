@@ -29,6 +29,7 @@ class App extends Component {
       students: attendance,
       currentFilter: 'all'
     })
+
   }
 
   toggleFilter(newFilter) {
@@ -42,6 +43,16 @@ class App extends Component {
 
     let isExcused
     selectedOption ? isExcused = null : isExcused = selectedExcused
+
+    let body = {
+      "id": parseInt(this.state.students.find(findId).id, 10),
+      "checkedIn": selectedOption,
+      "excused": isExcused
+    }
+
+    fetch(`${baseURL}/student/update?id=${body.id}&checkedIn=${selectedOption}&excused=${isExcused}`,
+      { method: 'PUT' }
+    )
 
     this.setState(prevState => {
       prevState.students.find(findId).checkedIn = selectedOption
