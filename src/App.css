@@ -11,6 +11,12 @@ div.col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-1 {
   margin-bottom: 80px;
 }
 
+#root > div > div.login-container > div {
+  padding: 10rem 0 0 10rem;
+  width: 30%;
+  min-width: 100px;
+}
+
 .spinner {
   display: flex;
   align-items: center;

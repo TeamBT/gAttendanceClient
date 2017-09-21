@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 export default class Login extends Component {
   render(){
     return(
-      <div className="container">
-          <div className="row">
-              <div className="col-md-offset-5 col-md-3">
+      <div className="login-container">
+          <div className="">
+              <div className="">
                   <div className="form-login">
                     <h4>Welcome back.</h4>
                     <input type="text" id="userName" className="form-control input-sm chat-input" placeholder="username" />
@@ -16,9 +16,7 @@ export default class Login extends Component {
                     <br></br>
                     <div className="wrapper">
                       <Link to="/attendance">
-                        <span className="group-btn">
-                          <a className="btn btn-primary btn-md">Login<i className="fa fa-sign-in"></i></a>
-                        </span>
+                          <button className="btn btn-warning btn-md">Login</button>
                       </Link>
                     </div>
                   </div>
