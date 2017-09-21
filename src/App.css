@@ -1,3 +1,7 @@
+body {
+  margin-bottom: 75px;
+}
+
 .header {
   border-radius: 0 !important;
   margin-bottom: 0.5rem !important;
@@ -35,7 +39,7 @@
 .footer {
   position: fixed;
   bottom: 0;
-  height: 100px;
+  height: 75px;
   width: 100%;
   background-color: rgb(62,63,57);
 }
@@ -43,5 +47,5 @@
 .footer p {
   color: #828282;
   margin-left: 12rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
