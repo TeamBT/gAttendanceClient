@@ -12,13 +12,15 @@ const StudentModal = ({ toggleModal, showModal, student, attendanceSubmission })
         bsSize='sm'
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title">{student !== null ? student.name : 'Loading...'}</Modal.Title>
+          <Modal.Title id="contained-modal-title">
+            { student !== null ? student.name : 'Loading...' }
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <AttendanceOptions student={student} attendanceSubmission={attendanceSubmission} />
+          <AttendanceOptions student={ student } attendanceSubmission={ attendanceSubmission } />
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={toggleModal}>Close</Button>
+          <Button onClick={ toggleModal }>Close</Button>
         </Modal.Footer>
       </Modal>
     </div>

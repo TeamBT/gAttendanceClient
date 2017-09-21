@@ -1,7 +1,7 @@
 import React from 'react'
-import {ButtonToolbar, ToggleButtonGroup, ToggleButton, Col} from 'react-bootstrap/lib/'
+import { ButtonToolbar, ToggleButtonGroup, ToggleButton, Col } from 'react-bootstrap/lib/'
 
-const FilterBar = ({toggleFilter, defaultFilter}) => {
+const FilterBar = ({ toggleFilter, defaultFilter }) => {
 
   let handleChange = (event) => {
     toggleFilter(event.target.value)
@@ -15,9 +15,9 @@ const FilterBar = ({toggleFilter, defaultFilter}) => {
                               type="radio"
                               name="filter"
                               defaultValue="all">
-            <ToggleButton onChange={handleChange} value="all">All Students</ToggleButton>
-            <ToggleButton onChange={handleChange} value="absent">Absent</ToggleButton>
-            <ToggleButton onChange={handleChange} value="present">Present</ToggleButton>
+            <ToggleButton onChange={ handleChange } value="all">All Students</ToggleButton>
+            <ToggleButton onChange={ handleChange } value="absent">Absent</ToggleButton>
+            <ToggleButton onChange={ handleChange } value="present">Present</ToggleButton>
           </ToggleButtonGroup>
         </ButtonToolbar>
       </Col>

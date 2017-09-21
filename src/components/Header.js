@@ -5,9 +5,9 @@ const Header = ({ bsStyle, instructor, logo, cohort }) => {
   return (
     <Navbar className="header">
       <Navbar.Header>
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={ logo } className="App-logo" alt="logo" />
         <Navbar.Brand>
-          <a><span className="g">g</span>Attendance Tracker</a>
+          <span className="g">g</span>Attendance Tracker
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
