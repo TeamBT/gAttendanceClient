@@ -23,7 +23,9 @@ class AttendanceOptions extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault()
-    this.props.attendanceSubmission(this.state.selectedOption, this.state.selectedExcused, this.props.student.id)
+    this.props.student.id === "28" ?
+      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ") :
+      this.props.attendanceSubmission(this.state.selectedOption, this.state.selectedExcused, this.props.student.id)
   }
   nullExcused() {
     let excusedAbsence

@@ -11,6 +11,14 @@ div.col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-1 {
   margin-bottom: 80px;
 }
 
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 60vh;
+}
+
 .header {
   border-radius: 0 !important;
   margin-bottom: 0.5rem !important;
@@ -48,5 +56,5 @@ div.col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-1 {
 .footer p {
   color: #828282;
   margin-left: 12rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }

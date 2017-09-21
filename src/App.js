@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Spinner from 'react-spinkit'
 import logo from './images/glogo.png';
 import './App.css';
 import Header from './components/Header'
@@ -17,6 +18,7 @@ class App extends Component {
       students: [],
       selectedStudent: null,
       showModal: false,
+      loading: true,
       currentFilter: ''
     }
   }
@@ -37,6 +39,7 @@ class App extends Component {
 
     this.setState({
       students: sortedAttendance,
+      loading: true,
       currentFilter: 'all'
     })
   }
@@ -94,8 +97,11 @@ class App extends Component {
         <div className="content">
         <FilterBar toggleFilter={ this.toggleFilter.bind(this) }/>
 
-        <ListOfStudents students={ students }
-                        toggleModal={ this.toggleModal.bind(this) } />
+        {this.state.loading ?
+          <div className="spinner"><Spinner name="pacman" color="orange" /></div>
+          : <ListOfStudents students={ students }
+                            toggleModal={ this.toggleModal.bind(this) } />
+        }
 
         <StudentModal toggleModal={ this.toggleModal.bind(this) }
                       showModal={ this.state.showModal }
