@@ -39,7 +39,7 @@ class App extends Component {
 
     this.setState({
       students: sortedAttendance,
-      loading: true,
+      loading: false,
       currentFilter: 'all'
     })
   }
