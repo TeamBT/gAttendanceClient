@@ -91,6 +91,7 @@ class App extends Component {
       <div>
         <Header logo={logo}
                 instructor="Roberto Ortega"/>
+        <div className="content">
         <FilterBar toggleFilter={ this.toggleFilter.bind(this) }/>
 
         <ListOfStudents students={ students }
@@ -100,6 +101,7 @@ class App extends Component {
                       showModal={ this.state.showModal }
                       student={ this.state.selectedStudent }
                       attendanceSubmission={ this.attendanceSubmission.bind(this) } />
+        </div>
         <Footer />
       </div>
     );

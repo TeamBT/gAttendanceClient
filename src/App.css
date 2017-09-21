@@ -1,11 +1,15 @@
 body {
-  margin-bottom: 75px;
+    margin-bottom: 80px !important;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 .header {
   border-radius: 0 !important;
   margin-bottom: 0.5rem !important;
-  /*padding-bottom: 0 !important;*/
 }
 
 .g {
@@ -22,22 +26,15 @@ body {
   margin-bottom: 0.5rem !important;
 }
 
-.listGroup {
-  padding-bottom: 10rem;
-}
-
 .StudentList-item {
   text-transform: capitalize;
   text-align: center !important;
   color: #828282 !important;
   margin-bottom: 0.5rem !important;
 }
-#root > div > div.col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-1 {
-  margin-bottom: 100px;
-}
 
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   height: 75px;
   width: 100%;
