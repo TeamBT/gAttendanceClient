@@ -1,11 +1,14 @@
 import React from 'react'
 import { Navbar } from 'react-bootstrap/lib/'
+import { Link } from 'react-router-dom'
 
 const Header = ({ bsStyle, instructor, logo, cohort }) => {
   return (
     <Navbar className="header">
       <Navbar.Header>
-      <img src={ logo } className="App-logo" alt="logo" />
+      <Link to="/">
+        <img src={ logo } className="App-logo" alt="logo" />
+      </Link>
         <Navbar.Brand>
           <span className="g">g</span>Attendance Tracker
         </Navbar.Brand>
@@ -13,7 +16,9 @@ const Header = ({ bsStyle, instructor, logo, cohort }) => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Text>
-          Instructor: <Navbar.Link>{ instructor }</Navbar.Link>
+          <Link to="/attendance">
+            Instructor: <Navbar.Link>{ instructor }</Navbar.Link>
+          </Link>
         </Navbar.Text>
         <Navbar.Text pullRight>
           Cohort: { cohort }
