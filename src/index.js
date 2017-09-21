@@ -9,8 +9,8 @@ ReactDOM.render(
   <Router>
     <div>
       <Route path="/" component={ App } />
-      <Route exact path="/" component={ Login } />
-      <Route path="/attendance" component={ Attendance } />
+      <Route path="/login" component={ Login } />
+      <Route exact path="/" component={ Attendance } />
     </div>
   </Router>,
   document.getElementById('root'))

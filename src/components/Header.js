@@ -6,7 +6,7 @@ const Header = ({ bsStyle, instructor, logo, cohort }) => {
   return (
     <Navbar className="header">
       <Navbar.Header>
-      <Link to="/">
+      <Link to="/login">
         <img src={ logo } className="App-logo" alt="logo" />
       </Link>
         <Navbar.Brand>
@@ -16,7 +16,7 @@ const Header = ({ bsStyle, instructor, logo, cohort }) => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Text>
-          <Link to="/attendance">
+          <Link to="/">
             Instructor: <Navbar.Link>{ instructor }</Navbar.Link>
           </Link>
         </Navbar.Text>

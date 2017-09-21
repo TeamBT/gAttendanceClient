@@ -15,7 +15,7 @@ export default class Login extends Component {
                     <input type="text" id="userPassword" className="form-control input-sm chat-input" placeholder="password" />
                     <br></br>
                     <div className="wrapper">
-                      <Link to="/attendance">
+                      <Link to="/">
                           <button className="btn btn-warning btn-md">Login</button>
                       </Link>
                     </div>
