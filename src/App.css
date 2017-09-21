@@ -7,6 +7,10 @@ html {
     min-height: 100%;
 }
 
+div.col-md-10.col-md-offset-1.col-sm-12.col-sm-offset-1 {
+  margin-bottom: 80px;
+}
+
 .header {
   border-radius: 0 !important;
   margin-bottom: 0.5rem !important;
