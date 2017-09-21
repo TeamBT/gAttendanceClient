@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from 'react-bootstrap/lib/'
 
-const Header = ({ bsStyle, instructor, logo }) => {
+const Header = ({ bsStyle, instructor, logo, cohort }) => {
   return (
     <Navbar className="header">
       <Navbar.Header>
@@ -16,7 +16,7 @@ const Header = ({ bsStyle, instructor, logo }) => {
           Instructor: <Navbar.Link>{ instructor }</Navbar.Link>
         </Navbar.Text>
         <Navbar.Text pullRight>
-          Cohort: g55
+          Cohort: { cohort }
         </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>

@@ -93,7 +93,8 @@ class App extends Component {
     return (
       <div>
         <Header logo={logo}
-                instructor="Roberto Ortega"/>
+                instructor="Roberto Ortega"
+                cohort="g55" />
         <div className="content">
         <FilterBar toggleFilter={ this.toggleFilter.bind(this) }/>
 
