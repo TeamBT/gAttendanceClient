@@ -25,11 +25,20 @@ class App extends Component {
     const response = await fetch(`${baseURL}/student`)
     const attendance = await response.json()
 
+    function compare(a, b) {
+      if (a.name < b.name)
+        return -1
+      if (a.name > b.name)
+        return 1
+      return 0
+    }
+
+    let sortedAttendance = attendance.sort(compare)
+
     this.setState({
-      students: attendance,
+      students: sortedAttendance,
       currentFilter: 'all'
     })
-
   }
 
   toggleFilter(newFilter) {
