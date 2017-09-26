@@ -30,6 +30,6 @@ The gAttendance client is essentially plug-and-play. Once the Pi is hooked up an
 
 [Jae Holderby](https://github.com/Jae-Holderby)
 
-[Chody Duskin](https://github.com/bestcodyever)
+[Cody Duskin](https://github.com/bestcodyever)
 
 [Tyler Keesling](https://github.com/tylerkeesling)
